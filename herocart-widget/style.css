@@ -1,0 +1,15 @@
+#hc-overlay {
+  display: none;
+}
+
+#hc-overlay.is-open {
+  display: block;
+}
+
+#hc-drawer {
+  transform: translateX(100%);
+}
+
+#hc-drawer.is-open {
+  transform: translateX(0);
+}

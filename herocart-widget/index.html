@@ -1,18 +1,27 @@
 <html>
   <head>
-    <script src="app.js"></script>
     <link rel="stylesheet" href="style.css">
   </head>
   
-  <div id="herocart">
+  <div id="hc-overlay"></div>
+
+  <div id="hc-drawer">
+
     <div class="hc-header">
-      Your Cart
+      <h2>Your Cart</h2>
+
+      <button id="hc-close">
+        ✕
+      </button>
     </div>
-  
+
     <div id="hc-items"></div>
-  
-    <button id="hc-checkout">
-      Checkout
-    </button>
+
+    <div class="hc-footer">
+      <button id="hc-checkout">
+        Checkout
+      </button>
+    </div>
+
   </div>
 </html>
