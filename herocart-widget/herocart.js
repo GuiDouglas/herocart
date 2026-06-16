@@ -1,43 +1,37 @@
-console.log("HeroCart Loaded");
+async function loadHeroCart() {
+  const html = await fetch(
+    "https://herocart.gui-alvesdouglas.workers.dev/index.html"
+  ).then(r => r.text());
 
-async function main() {
-  console.log("Step 1");
+  document.addEventListener("click", event => {
+    console.log(
+      event.target,
+      event.target.closest("a"),
+      event.target.closest("button")
+    );
+  });
 
-  const response =
-    await fetch("/cart.js");
+  const root = document.createElement("div");
 
-  console.log("Step 2");
+  root.id = "herocart-root";
 
-  const cart =
-    await response.json();
+  root.innerHTML = html;
 
-  console.log("Step 3", cart);
+  document.body.appendChild(root);
 
-  const item =
-    cart.items[0];
+  const css =
+    document.createElement("link");
 
-  console.log("Step 4", item);
+  css.rel = "stylesheet";
 
-  const drawer =
-    document.createElement("div");
+  css.href =
+    "https://herocart.gui-alvesdouglas.workers.dev/style.css";
 
-  drawer.style.position = "fixed";
-  drawer.style.top = "20px";
-  drawer.style.right = "20px";
-  drawer.style.background = "white";
-  drawer.style.border = "1px solid black";
-  drawer.style.padding = "20px";
-  drawer.style.zIndex = "999999";
+  document.head.appendChild(css);
 
-  drawer.innerHTML = `
-  <div>
-    <h3>${item.product_title}</h3>
-  </div>
-`;
-
-  document.body.appendChild(drawer);
-
-  console.log("Step 5");
+  await import(
+    "https://herocart.gui-alvesdouglas.workers.dev/app.js"
+  );
 }
 
-main();
+loadHeroCart();
