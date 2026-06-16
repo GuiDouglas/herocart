@@ -68,6 +68,9 @@ export function openDrawer() {
 
   drawer?.classList.add("is-open");
   overlay?.classList.add("is-open");
+
+  document.body.style.overflow =
+    "hidden";
 }
 
 export function closeDrawer() {
@@ -79,4 +82,7 @@ export function closeDrawer() {
 
   drawer?.classList.remove("is-open");
   overlay?.classList.remove("is-open");
+
+  document.body.style.overflow =
+    "";
 } 
