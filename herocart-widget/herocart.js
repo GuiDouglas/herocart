@@ -8,10 +8,11 @@ console.log("HeroCart Loaded");
     const cart =
       await response.json();
 
-    console.log(
-      "HeroCart Cart:",
-      cart
-    );
+      console.log(JSON.stringify(
+        cart.items[0],
+        null,
+        2
+      ));
   } catch (error) {
     console.error(error);
   }
