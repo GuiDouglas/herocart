@@ -1,6 +1,6 @@
 async function loadHeroCart() {
   const html = await fetch(
-    "https://herocart.gui-alvesdouglas.workers.dev/index.html"
+    "https://herocart.gui-alvesdouglas.workers.dev/"
   ).then(r => r.text());
 
   document.addEventListener("click", event => {
