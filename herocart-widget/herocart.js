@@ -1,19 +1,40 @@
 console.log("HeroCart Loaded");
 
-(async () => {
-  try {
-    const response =
-      await fetch("/cart.js");
+async function main() {
+  const response =
+    await fetch("/cart.js");
 
-    const cart =
-      await response.json();
+  const cart =
+    await response.json();
 
-      console.log(JSON.stringify(
-        cart.items[0],
-        null,
-        2
-      ));
-  } catch (error) {
-    console.error(error);
-  }
-})();
+  const item =
+    cart.items[0];
+
+  const drawer =
+    document.createElement("div");
+
+  drawer.innerHTML = `
+    <div>
+      <img
+        src="${item.image}"
+        width="120"
+      />
+
+      <h3>
+        ${item.product_title}
+      </h3>
+
+      <p>
+        Qty: ${item.quantity}
+      </p>
+
+      <p>
+        € ${(item.price / 100).toFixed(2)}
+      </p>
+    </div>
+  `;
+
+  document.body.appendChild(drawer);
+}
+
+main();
