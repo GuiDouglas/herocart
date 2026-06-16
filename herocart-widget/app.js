@@ -45,6 +45,29 @@ document
       openDrawer();
     }
   );
+
+  document.addEventListener(
+    "click",
+    event => {
+      const button =
+        event.target.closest(
+          'button[name="add"]'
+        );
+  
+      if (!button) {
+        return;
+      }
+  
+      setTimeout(async () => {
+        const cart =
+          await getCart();
+  
+        renderCartItems(cart);
+  
+        openDrawer();
+      }, 1000);
+    }
+  );
 }
 
 init();
