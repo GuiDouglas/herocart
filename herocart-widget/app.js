@@ -12,13 +12,12 @@ async function init() {
 
   renderCartItems(cart);
 
-  openDrawer();
-  document
-  .querySelector("#hc-close")
-  ?.addEventListener(
-    "click",
-    closeDrawer
-  );
+document
+.querySelector("#hc-close")
+?.addEventListener(
+  "click",
+  closeDrawer
+ );
 
 document
   .querySelector("#hc-overlay")
@@ -28,6 +27,24 @@ document
   );
 
   console.log("abriu e fechou")
+
+  document.addEventListener(
+    "click",
+    event => {
+      const cartButton =
+        event.target.closest(
+          "#cart-icon-bubble"
+        );
+  
+      if (!cartButton) {
+        return;
+      }
+  
+      event.preventDefault();
+  
+      openDrawer();
+    }
+  );
 }
 
 init();
