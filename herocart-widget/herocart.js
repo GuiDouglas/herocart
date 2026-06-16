@@ -30,10 +30,10 @@ async function main() {
   drawer.style.zIndex = "999999";
 
   drawer.innerHTML = `
-    <div>
-      HERO CART TEST
-    </div>
-  `;
+  <div>
+    <h3>${item.product_title}</h3>
+  </div>
+`;
 
   document.body.appendChild(drawer);
 
