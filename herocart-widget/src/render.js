@@ -44,7 +44,7 @@ export function renderCartItems(cart) {
                   −
                 </button>
 
-                <span class="hc-quantity-value"
+                <span class="hc-quantity-value">
                   ${item.quantity}
                 </span>
 
