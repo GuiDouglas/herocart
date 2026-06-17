@@ -12,29 +12,43 @@ export function renderCartItems(cart) {
   }
 
   container.innerHTML =
-    cart.items
-      .map(
-        item => `
+  cart.items
+    .map(
+      item => {
+        const comparePrice =
+          item.original_line_price >
+          item.final_line_price
+            ? `$${(
+                item.original_line_price / 100
+              ).toFixed(2)}`
+            : "";
+
+        const discount =
+          item.original_line_price -
+          item.final_line_price;
+
+        return `
           <div class="hc-item">
-           <div class="hc-item-actions">
-              <button
-                class="hc-remove"
-                data-key="${item.key}"
-              >
-                Remove
-              </button>
 
+            <div class="hc-item-media">
+              <img
+                class="hc-item-image"
+                src="${item.image}"
+                alt="${item.product_title}"
+              />
             </div>
-            <img
-              class="hc-item-image"
-              src="${item.image}"
-              alt="${item.product_title}"
-            />
 
-            <div class="hc-item-content">
-              <h3>
+            <div class="hc-item-product">
+              <h3 class="hc-item-title">
                 ${item.product_title}
               </h3>
+
+              <p class="hc-item-variant">
+                ${
+                  item.variant_title ||
+                  ""
+                }
+              </p>
 
               <div class="hc-quantity">
                 <button
@@ -56,10 +70,52 @@ export function renderCartItems(cart) {
                 </button>
               </div>
             </div>
+
+            <div class="hc-item-pricing">
+
+              <button
+                class="hc-remove"
+                data-key="${item.key}"
+              >
+                Remove
+              </button>
+
+              ${
+                comparePrice
+                  ? `
+                    <div class="hc-compare-price">
+                      ${comparePrice}
+                    </div>
+                  `
+                  : ""
+              }
+
+              <div class="hc-item-subtotal">
+                $${(
+                  item.final_line_price /
+                  100
+                ).toFixed(2)}
+              </div>
+
+              ${
+                discount > 0
+                  ? `
+                    <div class="hc-item-discount">
+                      Save $${(
+                        discount / 100
+                      ).toFixed(2)}
+                    </div>
+                  `
+                  : ""
+              }
+
+            </div>
+
           </div>
-        `
-      )
-      .join("");
+        `;
+      }
+    )
+    .join("");
 }
 
 export function renderEmptyCart() {
