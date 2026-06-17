@@ -26,3 +26,24 @@ export async function updateQuantity(
 
   return getCart();
 }
+
+export async function removeItem(
+  key
+) {
+  await fetch(
+    "/cart/change.js",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type":
+          "application/json"
+      },
+      body: JSON.stringify({
+        id: key,
+        quantity: 0
+      })
+    }
+  );
+
+  return getCart();
+}

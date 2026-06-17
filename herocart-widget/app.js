@@ -22,6 +22,10 @@ import {
 }
 from "./src/interceptors.js";
 
+import {
+  initRemove
+} from "./src/remove.js";
+
 async function init() {
   const cart =
     await getCart();
@@ -33,6 +37,8 @@ async function init() {
   initDrawer();
 
   initQuantity();
+
+  initRemove();
 
   initInterceptors();
 }

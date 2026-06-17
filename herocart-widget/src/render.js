@@ -16,6 +16,15 @@ export function renderCartItems(cart) {
       .map(
         item => `
           <div class="hc-item">
+           <div class="hc-item-actions">
+              <button
+                class="hc-remove"
+                data-key="${item.key}"
+              >
+                Remove
+              </button>
+
+            </div>
             <img
               class="hc-item-image"
               src="${item.image}"
@@ -35,7 +44,7 @@ export function renderCartItems(cart) {
                   −
                 </button>
 
-                class="hc-quantity-value"
+                <span class="hc-quantity-value"
                   ${item.quantity}
                 </span>
 
@@ -63,8 +72,19 @@ export function renderEmptyCart() {
 
   container.innerHTML = `
     <div class="hc-empty">
+
+    <h3>
       Your cart is empty
-    </div>
+    </h3>
+
+    <a
+      href="/"
+      class="hc-empty-button"
+    >
+      Continue shopping
+    </a>
+
+  </div>
   `;
 }
 
