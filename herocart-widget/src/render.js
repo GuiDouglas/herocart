@@ -27,16 +27,25 @@ export function renderCartItems(cart) {
                 ${item.product_title}
               </h3>
 
-              <p>
-                Quantity:
-                ${item.quantity}
-              </p>
+              <div class="hc-quantity">
+                <button
+                  class="hc-minus"
+                  data-variant-id="${item.variant_id}"
+                >
+                  −
+                </button>
 
-              <p>
-                € ${(
-                  item.price / 100
-                ).toFixed(2)}
-              </p>
+                <span>
+                  ${item.quantity}
+                </span>
+
+                <button
+                  class="hc-plus"
+                  data-variant-id="${item.variant_id}"
+                >
+                  +
+                </button>
+              </div>
             </div>
           </div>
         `
@@ -89,3 +98,19 @@ export function closeDrawer() {
   document.body.style.overflow =
     "";
 } 
+
+export function renderSubtotal(cart) {
+  const subtotal =
+    document.querySelector(
+      "#hc-subtotal"
+    );
+
+  if (!subtotal) {
+    return;
+  }
+
+  subtotal.textContent =
+    `$${(
+      cart.total_price / 100
+    ).toFixed(2)}`;
+}
