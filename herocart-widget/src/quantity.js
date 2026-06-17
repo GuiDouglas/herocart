@@ -8,9 +8,8 @@ import {
   renderSubtotal
 } from "./render.js";
 
-
 async function increaseQuantity(
-  variantId
+  key
 ) {
   const cart =
     await getCart();
@@ -18,8 +17,7 @@ async function increaseQuantity(
   const item =
     cart.items.find(
       item =>
-        item.variant_id ===
-        variantId
+        item.key === key
     );
 
   if (!item) {
@@ -32,17 +30,13 @@ async function increaseQuantity(
       item.quantity + 1
     );
 
-  renderCartItems(
-    updatedCart
-  );
+  renderCartItems(updatedCart);
 
-  renderSubtotal(
-    updatedCart
-  );
+  renderSubtotal(updatedCart);
 }
 
 async function decreaseQuantity(
-  variantId
+  key
 ) {
   const cart =
     await getCart();
@@ -50,17 +44,14 @@ async function decreaseQuantity(
   const item =
     cart.items.find(
       item =>
-        item.variant_id ===
-        variantId
+        item.key === key
     );
 
   if (!item) {
     return;
   }
 
-  if (
-    item.quantity <= 1
-  ) {
+  if (item.quantity <= 1) {
     return;
   }
 
@@ -70,13 +61,9 @@ async function decreaseQuantity(
       item.quantity - 1
     );
 
-  renderCartItems(
-    updatedCart
-  );
+  renderCartItems(updatedCart);
 
-  renderSubtotal(
-    updatedCart
-  );
+  renderSubtotal(updatedCart);
 }
 
 export function initQuantity() {
@@ -91,9 +78,7 @@ export function initQuantity() {
 
       if (plus) {
         await increaseQuantity(
-          Number(
-            plus.dataset.variantId
-          )
+          plus.dataset.key
         );
 
         return;
@@ -106,9 +91,7 @@ export function initQuantity() {
 
       if (minus) {
         await decreaseQuantity(
-          Number(
-            minus.dataset.variantId
-          )
+          minus.dataset.key
         );
       }
     }
