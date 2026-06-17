@@ -6,7 +6,7 @@ export async function getCart() {
 }
 
 export async function updateQuantity(
-  variantId,
+  key,
   quantity
 ) {
   await fetch(
@@ -18,7 +18,7 @@ export async function updateQuantity(
           "application/json"
       },
       body: JSON.stringify({
-        id: variantId,
+        id: key,
         quantity
       })
     }

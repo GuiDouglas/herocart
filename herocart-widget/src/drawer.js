@@ -19,8 +19,11 @@ export function closeDrawer() {
   const overlay =
     document.querySelector("#hc-overlay");
 
+  const body = document.body;
+
   drawer?.classList.remove("is-open");
   overlay?.classList.remove("is-open");
+  body?.classList.remove("overflow-hidden");
 
   document.body.style.overflow =
     "";

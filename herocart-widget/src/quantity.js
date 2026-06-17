@@ -27,7 +27,7 @@ async function increaseQuantity(
 
   const updatedCart =
     await updateQuantity(
-      variantId,
+      item.key,
       item.quantity + 1
     );
 
@@ -65,7 +65,7 @@ async function decreaseQuantity(
 
   const updatedCart =
     await updateQuantity(
-      variantId,
+      item.key,
       item.quantity - 1
     );
 
