@@ -30,7 +30,7 @@ export function renderCartItems(cart) {
               <div class="hc-quantity">
                 <button
                   class="hc-minus"
-                  data-variant-id="${item.variant_id}"
+                  data-variant-id="${item.key}"
                 >
                   −
                 </button>
@@ -41,7 +41,7 @@ export function renderCartItems(cart) {
 
                 <button
                   class="hc-plus"
-                  data-variant-id="${item.variant_id}"
+                  data-variant-id="${item.key}"
                 >
                   +
                 </button>

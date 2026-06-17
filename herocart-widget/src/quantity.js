@@ -8,6 +8,7 @@ import {
   renderSubtotal
 } from "./render.js";
 
+
 async function increaseQuantity(
   variantId
 ) {
@@ -79,6 +80,7 @@ async function decreaseQuantity(
 }
 
 export function initQuantity() {
+
   document.addEventListener(
     "click",
     async event => {
