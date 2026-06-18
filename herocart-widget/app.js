@@ -1,4 +1,4 @@
-import { getCart }
+import { getCart, updateCartBubble }
 from "./src/cart.js";
 
 import {
@@ -37,6 +37,8 @@ async function init() {
   renderCartItems(cart);
 
   renderSubtotal(cart);
+
+  updateCartBubble(cart);
 
   initDrawer();
 

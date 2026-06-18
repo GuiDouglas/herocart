@@ -47,3 +47,19 @@ export async function removeItem(
 
   return getCart();
 }
+
+export function updateCartBubble(
+  cart
+) {
+  const bubble =
+    document.querySelector(
+      ".cart-count-bubble span[aria-hidden='true']"
+    );
+
+  if (!bubble) {
+    return;
+  }
+
+  bubble.textContent =
+    cart.item_count;
+}
