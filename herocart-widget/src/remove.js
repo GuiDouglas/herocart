@@ -32,6 +32,10 @@ export function initRemove() {
       renderSubtotal(
         updatedCart
       );
+
+      updateCartBubble(
+        updatedCart
+      );
     }
   );
 }

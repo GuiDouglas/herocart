@@ -30,8 +30,10 @@ import {
   renderPaymentMethods
 } from "./src/payment-methods.js";
 
+export let currentCart = null;
+
 async function init() {
-  const cart =
+  currentCart =
     await getCart();
 
   renderCartItems(cart);

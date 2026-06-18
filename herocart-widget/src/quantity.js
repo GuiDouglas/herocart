@@ -1,3 +1,4 @@
+import { currentCart } from "../app.js";
 import {
   getCart,
   updateQuantity
@@ -11,14 +12,12 @@ import {
 async function increaseQuantity(
   key
 ) {
-  const cart =
-    await getCart();
-
   const item =
-    cart.items.find(
+    currentCart.items.find(
       item =>
         item.key === key
     );
+    
 
   if (!item) {
     return;
@@ -31,8 +30,8 @@ async function increaseQuantity(
     );
 
   renderCartItems(updatedCart);
-
   renderSubtotal(updatedCart);
+  updateCartBubble(updatedCart);
 }
 
 async function decreaseQuantity(
@@ -42,7 +41,7 @@ async function decreaseQuantity(
     await getCart();
 
   const item =
-    cart.items.find(
+    currentCart.items.find(
       item =>
         item.key === key
     );
@@ -62,8 +61,8 @@ async function decreaseQuantity(
     );
 
   renderCartItems(updatedCart);
-
   renderSubtotal(updatedCart);
+  updateCartBubble(updatedCart);
 }
 
 export function initQuantity() {
