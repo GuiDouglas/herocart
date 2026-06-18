@@ -11,6 +11,7 @@ import {
   openDrawer
 }
 from "./drawer.js";
+import { setStoredCart } from "./store.js";
 
 export function initInterceptors() {
   const originalFetch =
@@ -30,6 +31,8 @@ export function initInterceptors() {
       ) {
         const cart =
           await getCart();
+
+        setStoredCart(cart)
 
         renderCartItems(cart);
 

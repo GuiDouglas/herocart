@@ -6,6 +6,7 @@ import {
   renderCartItems,
   renderSubtotal
 } from "./render.js";
+import { setStoredCart } from "./store.js";
 
 export function initRemove() {
   document.addEventListener(
@@ -24,6 +25,8 @@ export function initRemove() {
         await removeItem(
           button.dataset.key
         );
+
+      setStoredCart(updatedCart)
 
       renderCartItems(
         updatedCart
