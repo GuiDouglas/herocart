@@ -36,11 +36,11 @@ async function init() {
   currentCart =
     await getCart();
 
-  renderCartItems(cart);
+  renderCartItems(currentCart);
 
-  renderSubtotal(cart);
+  renderSubtotal(currentCart);
 
-  updateCartBubble(cart);
+  updateCartBubble(currentCart);
 
   initDrawer();
 
