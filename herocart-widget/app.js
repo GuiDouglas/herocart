@@ -26,6 +26,10 @@ import {
   initRemove
 } from "./src/remove.js";
 
+import {
+  renderPaymentMethods
+} from "./src/payment-methods.js";
+
 async function init() {
   const cart =
     await getCart();
@@ -41,6 +45,16 @@ async function init() {
   initRemove();
 
   initInterceptors();
+
+  const paymentMethods =
+    document.querySelector(
+      "#hc-payment-methods"
+    );
+
+  if (paymentMethods) {
+    paymentMethods.innerHTML =
+      renderPaymentMethods();
+  }
 }
 
 init();

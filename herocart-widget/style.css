@@ -181,6 +181,8 @@ cart-drawer {
   justify-content: space-between;
   align-items: center;
 
+  padding: 16px 20px;
+
   margin-bottom: 16px;
 
   font-size: 16px;
@@ -218,4 +220,20 @@ cart-drawer {
   padding: 16px 20px;
 
   border-top: 1px solid #eee;
+}
+
+.hc-payment-methods {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+
+  margin-top: 16px;
+}
+
+.hc-payment-icon {
+  height: 24px;
+  width: auto;
+
+  display: block;
 }
