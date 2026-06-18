@@ -10,7 +10,7 @@ export function renderPaymentMethods() {
       />
 
       <img
-        src="herocart.gui-alvesdouglas.workers.dev/src/assets/payment-methods/googlepay.svg"
+        src="https://herocart.gui-alvesdouglas.workers.dev/src/assets/payment-methods/googlepay.svg"
         alt="Google Pay"
         class="hc-payment-icon"
       />
