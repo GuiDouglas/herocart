@@ -1,6 +1,7 @@
 import { currentCart } from "../app.js";
 import {
   getCart,
+  updateCartBubble,
   updateQuantity
 } from "./cart.js";
 
