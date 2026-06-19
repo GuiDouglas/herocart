@@ -3,7 +3,7 @@ export async function createCheckout(
 ) {
   const response =
     await fetch(
-      "https://sua-api.com/checkout",
+      "https://nyoveo.com/checkout",
       {
         method: "POST",
 
