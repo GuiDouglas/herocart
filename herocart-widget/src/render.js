@@ -19,7 +19,7 @@ export function renderCartItems(cart) {
         item.compare_at_price >
         item.price
           ? `$${(
-              item.compare_at_price / 100
+              item.compare_at_price * item.quantity / 100
             ).toFixed(2)}`
           : "";
       
@@ -36,7 +36,7 @@ export function renderCartItems(cart) {
         item.original_line_price -
         item.final_line_price;
 
-      console.log(item)
+      console.log(item.cart)
 
       return `
         <div class="hc-item">
@@ -94,7 +94,7 @@ export function renderCartItems(cart) {
               comparePrice
                 ? `
                   <div class="hc-compare-price">
-                    ${comparePrice * item.quantity}
+                    ${comparePrice}
                   </div>
 
                   <div class="hc-item-save">
