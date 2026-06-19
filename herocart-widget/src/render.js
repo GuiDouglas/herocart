@@ -36,6 +36,8 @@ export function renderCartItems(cart) {
         item.original_line_price -
         item.final_line_price;
 
+      console.log(item)
+
       return `
         <div class="hc-item">
 
@@ -92,7 +94,7 @@ export function renderCartItems(cart) {
               comparePrice
                 ? `
                   <div class="hc-compare-price">
-                    ${comparePrice}
+                    ${comparePrice * item.quantity}
                   </div>
 
                   <div class="hc-item-save">
