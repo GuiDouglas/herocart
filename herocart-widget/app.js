@@ -34,6 +34,8 @@ async function init() {
   const cart =
     await getCart();
 
+  setStoredCart(cart)
+
   renderCartItems(cart);
 
   renderSubtotal(cart);
