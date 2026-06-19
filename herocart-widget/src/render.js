@@ -10,7 +10,7 @@ export function renderCartItems(cart) {
     renderEmptyCart();
     return;
   }
-
+  console.log(cart.items)
   container.innerHTML =
   cart.items
     .map(
@@ -189,4 +189,16 @@ export function renderSubtotal(cart) {
     `$${(
       cart.total_price / 100
     ).toFixed(2)}`;
+}
+
+export function renderSubtotal(cart) {
+  const button =
+    document.querySelector(
+      "#hc-checkout"
+    );
+
+    button.textContent =
+    `Checkout • $${(
+      cart.total_price / 100
+    ).toFixed(2)}`; 
 }

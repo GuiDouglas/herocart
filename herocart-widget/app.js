@@ -52,8 +52,6 @@ async function init() {
 
   initInterceptors();
 
-  createCheckout(cart.items);
-
   const paymentMethods =
     document.querySelector(
       "#hc-payment-methods"
