@@ -42,7 +42,7 @@ import { getStoredCart, setStoredCart } from "./store.js";
   ) {
     const cart = getStoredCart()
     const item =
-      currentCart.items.find(
+      cart.items.find(
         item =>
           item.key === key
       );
