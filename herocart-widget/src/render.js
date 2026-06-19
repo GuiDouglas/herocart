@@ -191,7 +191,7 @@ export function renderSubtotal(cart) {
     ).toFixed(2)}`;
 }
 
-export function renderSubtotal(cart) {
+export function renderCheckoutButton(cart) {
   const button =
     document.querySelector(
       "#hc-checkout"

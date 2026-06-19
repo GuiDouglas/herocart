@@ -3,6 +3,7 @@ from "./src/cart.js";
 
 import {
   renderCartItems,
+  renderCheckoutButton,
   renderSubtotal
 }
 from "./src/render.js";
@@ -30,7 +31,7 @@ import {
   renderPaymentMethods
 } from "./src/payment-methods.js";
 import { getStoredCart, setStoredCart } from "./src/store.js";
-import { createCheckout, redirectToCheckout } from "./src/chekout.js";
+import { redirectToCheckout } from "./src/chekout.js";
 
 async function init() {
   const cart =
@@ -41,6 +42,8 @@ async function init() {
   renderCartItems(cart);
 
   renderSubtotal(cart);
+
+  renderCheckoutButton(cart);
 
   updateCartBubble(cart);
 
