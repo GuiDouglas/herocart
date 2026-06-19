@@ -1,20 +1,20 @@
+import { getStoredCart } from "./store";
+
 export async function createCheckout(
-  items
+  cart
 ) {
   const response =
     await fetch(
-      "https://nyoveo.com/checkout",
+      "http://localhost:3000/checkout",
       {
         method: "POST",
-
         headers: {
           "Content-Type":
-            "application/json",
+            "application/json"
         },
-
         body: JSON.stringify({
-          items,
-        }),
+          cart
+        })
       }
     );
 
@@ -27,14 +27,15 @@ export async function createCheckout(
   return response.json();
 }
 
-export async function redirectToCheckout(
-  items
-) {
+export async function redirectToCheckout() {
+  const cart =
+    getStoredCart();
+
   const result =
     await createCheckout(
-      items
+      cart.items
     );
 
   window.location.href =
-    "/checkout";
+    result.checkoutUrl;
 }

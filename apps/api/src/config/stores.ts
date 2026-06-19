@@ -15,7 +15,7 @@ export interface Store {
 export const stores: Store[] = [
   {
     id: "store-b",
-    checkoutDomain: "loja-b.myshopify.com",
+    checkoutDomain: "150x5b-kz.myshopify.com",
 
     shop: "150x5b-kz",
 
