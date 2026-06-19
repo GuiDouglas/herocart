@@ -36,5 +36,5 @@ export async function redirectToCheckout(
     );
 
   window.location.href =
-    result.checkoutUrl;
+    "/checkout";
 }

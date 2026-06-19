@@ -29,8 +29,8 @@ import {
 import {
   renderPaymentMethods
 } from "./src/payment-methods.js";
-import { setStoredCart } from "./src/store.js";
-import { createCheckout } from "./src/chekout.js";
+import { getStoredCart, setStoredCart } from "./src/store.js";
+import { createCheckout, redirectToCheckout } from "./src/chekout.js";
 
 async function init() {
   const cart =
@@ -66,3 +66,19 @@ async function init() {
 }
 
 init();
+
+document
+  .querySelector(
+    "#hc-checkout"
+  )
+  ?.addEventListener(
+    "click",
+    async () => {
+      const cart =
+        getStoredCart();
+
+      await redirectToCheckout(
+        cart.items
+      );
+    }
+  );
