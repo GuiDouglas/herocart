@@ -37,6 +37,7 @@ import { getStoredCart, setStoredCart } from "./store.js";
 
     setStoredCart(enrichedCart)
     renderCartItems(enrichedCart);
+    renderTotalSavings(enrichedCart);
     renderSubtotal(enrichedCart);
     updateCartBubble(enrichedCart);
   }
@@ -70,6 +71,7 @@ import { getStoredCart, setStoredCart } from "./store.js";
 
     setStoredCart(enrichedCart)
     renderCartItems(enrichedCart);
+    renderTotalSavings(enrichedCart);
     renderSubtotal(enrichedCart);
     updateCartBubble(enrichedCart);
   }

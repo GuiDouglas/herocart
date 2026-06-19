@@ -11,17 +11,14 @@ export function renderCartItems(cart) {
 
   container.innerHTML = cart.items
     .map(item => {
-      const hasDiscount =
-        item.original_line_price >
-        item.final_line_price;
 
-        const comparePrice =
-        item.compare_at_price >
-        item.price
-          ? `$${(
-              item.compare_at_price * item.quantity / 100
-            ).toFixed(2)}`
-          : "";
+      const comparePrice =
+      item.compare_at_price >
+      item.price
+        ? `$${(
+            item.compare_at_price * item.quantity / 100
+          ).toFixed(2)}`
+        : "";
       
       const saveAmount =
         item.compare_at_price >
@@ -184,6 +181,24 @@ export function closeDrawer() {
   document.body.style.overflow =
     "";
 } 
+
+export function renderTotalSavings(
+  cart
+) {
+  const savings =
+    document.querySelector(
+      "#hc-total-savings"
+    );
+
+  if (!savings) {
+    return;
+  }
+
+  savings.textContent =
+    `$${(
+      cart.total_discount / 100
+    ).toFixed(2)}`;
+}
 
 export function renderSubtotal(cart) {
   const subtotal =

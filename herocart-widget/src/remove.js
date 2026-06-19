@@ -34,6 +34,10 @@ export function initRemove() {
 
       renderSubtotal(
         updatedCart
+      )
+
+      renderSubtotal(
+        updatedCart
       );
 
       updateCartBubble(

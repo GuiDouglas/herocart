@@ -44,6 +44,8 @@ async function init() {
 
   renderCartItems(enricherdCart);
 
+  renderTotalSavings(cart);
+
   renderSubtotal(cart);
 
   renderCheckoutButton(cart);

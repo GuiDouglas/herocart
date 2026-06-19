@@ -309,3 +309,17 @@ cart-drawer {
 
   font-weight: 600;
 }
+
+.hc-summary-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+#hc-total-savings {
+  color: #16a34a;
+
+  font-weight: 600;
+}
