@@ -29,6 +29,7 @@ import {
 import {
   renderPaymentMethods
 } from "./src/payment-methods.js";
+import { setStoredCart } from "./src/store.js";
 
 async function init() {
   const cart =
