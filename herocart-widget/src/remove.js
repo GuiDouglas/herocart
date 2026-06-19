@@ -4,7 +4,8 @@ import {
 
 import {
   renderCartItems,
-  renderSubtotal
+  renderSubtotal,
+  renderTotalSavings
 } from "./render.js";
 import { setStoredCart } from "./store.js";
 
@@ -32,7 +33,7 @@ export function initRemove() {
         updatedCart
       );
 
-      renderSubtotal(
+      renderTotalSavings(
         updatedCart
       )
 

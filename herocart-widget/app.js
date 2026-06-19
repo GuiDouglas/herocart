@@ -4,7 +4,8 @@ from "./src/cart.js";
 import {
   renderCartItems,
   renderCheckoutButton,
-  renderSubtotal
+  renderSubtotal,
+  renderTotalSavings
 }
 from "./src/render.js";
 

@@ -6,7 +6,8 @@
 
   import {
     renderCartItems,
-    renderSubtotal
+    renderSubtotal,
+    renderTotalSavings
   } from "./render.js";
 import { getStoredCart, setStoredCart } from "./store.js";
 
