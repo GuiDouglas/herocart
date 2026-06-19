@@ -97,7 +97,7 @@ export function renderCartItems(cart) {
 
                   <div class="hc-item-save">
                     Save $${(
-                      saveAmount / 100
+                      saveAmount * item.quantity/ 100
                     ).toFixed(2)}
                   </div>
                 `
