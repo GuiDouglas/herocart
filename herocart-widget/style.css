@@ -183,7 +183,7 @@ cart-drawer {
   font-size: 12px;
 }
 
-.hc-subtotal-row {
+.hc-summary-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -206,7 +206,7 @@ cart-drawer {
 .hc-total-savings {
   font-size: 12px;
   font-weight: 600;
-  
+
   color: #16a34a;
 }
 
