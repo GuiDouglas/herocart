@@ -299,3 +299,13 @@ cart-drawer {
     hc-skeleton-loading
     1.2s infinite;
 }
+
+.hc-item-save {
+  margin-top: 4px;
+
+  color: #16a34a;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}

@@ -15,12 +15,22 @@ export function renderCartItems(cart) {
         item.original_line_price >
         item.final_line_price;
 
-      const comparePrice =
-        hasDiscount
-          ? `$${(item.original_line_price / 100).toFixed(2)}`
-          : item.compare_at_price
-            ? `$${(item.compare_at_price / 100).toFixed(2)}`
-            : "";
+        const comparePrice =
+        item.compare_at_price >
+        item.price
+          ? `$${(
+              item.compare_at_price / 100
+            ).toFixed(2)}`
+          : "";
+      
+      const saveAmount =
+        item.compare_at_price >
+        item.price
+          ? (
+              item.compare_at_price -
+              item.price
+            )
+          : 0;
 
       const discount =
         item.original_line_price -
@@ -83,6 +93,12 @@ export function renderCartItems(cart) {
                 ? `
                   <div class="hc-compare-price">
                     ${comparePrice}
+                  </div>
+
+                  <div class="hc-item-save">
+                    Save $${(
+                      saveAmount / 100
+                    ).toFixed(2)}
                   </div>
                 `
                 : ""
