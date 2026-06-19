@@ -30,6 +30,7 @@ import {
   renderPaymentMethods
 } from "./src/payment-methods.js";
 import { setStoredCart } from "./src/store.js";
+import { createCheckout } from "./src/chekout.js";
 
 async function init() {
   const cart =
@@ -50,6 +51,8 @@ async function init() {
   initRemove();
 
   initInterceptors();
+
+  createCheckout(cart.items);
 
   const paymentMethods =
     document.querySelector(
