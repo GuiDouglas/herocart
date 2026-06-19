@@ -1,4 +1,4 @@
-import { getStoredCart } from "./store";
+import { getStoredCart } from "./store.js";
 
 export async function createCheckout(
   cart
