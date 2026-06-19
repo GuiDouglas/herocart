@@ -1,4 +1,5 @@
   import {
+    enrichCart,
     updateCartBubble,
     updateQuantity
   } from "./cart.js";
@@ -31,10 +32,13 @@ import { getStoredCart, setStoredCart } from "./store.js";
         item.quantity + 1
       );
 
-    setStoredCart(updatedCart)
-    renderCartItems(updatedCart);
-    renderSubtotal(updatedCart);
-    updateCartBubble(updatedCart);
+    const enrichedCart =
+      await enrichCart(updatedCart)
+
+    setStoredCart(enrichedCart)
+    renderCartItems(enrichedCart);
+    renderSubtotal(enrichedCart);
+    updateCartBubble(enrichedCart);
   }
 
   async function decreaseQuantity(
@@ -61,10 +65,13 @@ import { getStoredCart, setStoredCart } from "./store.js";
         item.quantity - 1
       );
 
-    setStoredCart(updatedCart)
-    renderCartItems(updatedCart);
-    renderSubtotal(updatedCart);
-    updateCartBubble(updatedCart);
+    const enrichedCart =
+      await enrichCart(updatedCart)
+
+    setStoredCart(enrichedCart)
+    renderCartItems(enrichedCart);
+    renderSubtotal(enrichedCart);
+    updateCartBubble(enrichedCart);
   }
 
   export function initQuantity() {

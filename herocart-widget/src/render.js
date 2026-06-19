@@ -34,9 +34,9 @@ export function renderCartItems(cart) {
 
       const discount =
         item.original_line_price -
-        item.final_line_price;
+        item.final_line_price;  
 
-      console.log(item.cart)
+      console.log(item)
 
       return `
         <div class="hc-item">
