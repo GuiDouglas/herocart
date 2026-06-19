@@ -1,4 +1,4 @@
-import { getProduct } from "./products";
+import { getProduct } from "./products.js";
 
 export async function getCart() {
   const response =
