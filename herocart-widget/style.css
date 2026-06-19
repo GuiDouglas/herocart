@@ -203,6 +203,11 @@ cart-drawer {
   margin-top: 2px;
 }
 
+.hc-total-savings {
+  font-size: 12px;
+  font-weight: 600;
+}
+
 .hc-item-discount {
   font-size: 12px;
   color: #2e7d32;
@@ -308,14 +313,6 @@ cart-drawer {
   font-size: 14px;
 
   font-weight: 600;
-}
-
-.hc-summary-row {
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
 }
 
 #hc-total-savings {

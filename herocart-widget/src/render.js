@@ -33,8 +33,6 @@ export function renderCartItems(cart) {
         item.original_line_price -
         item.final_line_price;  
 
-      console.log(item)
-
       return `
         <div class="hc-item">
 
