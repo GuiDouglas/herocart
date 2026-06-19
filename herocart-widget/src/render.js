@@ -180,6 +180,39 @@ export function closeDrawer() {
     "";
 } 
 
+export function renderDiscountTag(
+  cart
+) {
+  const container =
+    document.querySelector(
+      "#hc-discount-tag"
+    );
+
+  if (!container) {
+    return;
+  }
+
+  if (
+    !cart.discounts ||
+    !cart.discounts.length
+  ) {
+    container.innerHTML = "";
+
+    return;
+  }
+
+  container.innerHTML =
+    cart.discounts
+      .map(
+        discount => `
+          <div class="hc-discount-tag">
+            ${discount.title}
+          </div>
+        `
+      )
+      .join("");
+}
+
 export function renderTotalSavings(
   cart
 ) {
