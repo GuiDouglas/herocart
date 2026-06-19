@@ -2,119 +2,111 @@ export function renderCartItems(cart) {
   const container =
     document.querySelector("#hc-items");
 
-  if (!container) {
-    return;
-  }
+  if (!container) return;
 
   if (!cart.items.length) {
     renderEmptyCart();
     return;
   }
-  console.log(cart.items)
-  container.innerHTML =
-  cart.items
-    .map(
-      item => {
-        const comparePrice =
-          item.original_line_price >
-          item.final_line_price
-            ? `$${(
-                item.original_line_price / 100
-              ).toFixed(2)}`
+
+  container.innerHTML = cart.items
+    .map(item => {
+      const hasDiscount =
+        item.original_line_price >
+        item.final_line_price;
+
+      const comparePrice =
+        hasDiscount
+          ? `$${(item.original_line_price / 100).toFixed(2)}`
+          : item.compare_at_price
+            ? `$${(item.compare_at_price / 100).toFixed(2)}`
             : "";
 
-        const discount =
-          item.original_line_price -
-          item.final_line_price;
+      const discount =
+        item.original_line_price -
+        item.final_line_price;
 
-        return `
-          <div class="hc-item">
+      return `
+        <div class="hc-item">
 
-            <div class="hc-item-media">
-              <img
-                class="hc-item-image"
-                src="${item.image}"
-                alt="${item.product_title}"
-              />
-            </div>
+          <div class="hc-item-media">
+            <img
+              class="hc-item-image"
+              src="${item.image}"
+              alt="${item.product_title}"
+            />
+          </div>
 
-            <div class="hc-item-product">
-              <h3 class="hc-item-title">
-                ${item.product_title}
-              </h3>
+          <div class="hc-item-product">
 
-              <p class="hc-item-variant">
-                ${
-                  item.variant_title ||
-                  ""
-                }
-              </p>
+            <h3 class="hc-item-title">
+              ${item.product_title}
+            </h3>
 
-              <div class="hc-quantity">
-                <button
-                  class="hc-minus"
-                  data-key="${item.key}"
-                >
-                  −
-                </button>
+            <p class="hc-item-variant">
+              ${item.variant_title || ""}
+            </p>
 
-                <span class="hc-quantity-value">
-                  ${item.quantity}
-                </span>
-
-                <button
-                  class="hc-plus"
-                  data-key="${item.key}"
-                >
-                  +
-                </button>
-              </div>
-            </div>
-
-            <div class="hc-item-pricing">
-
+            <div class="hc-quantity">
               <button
-                class="hc-remove"
+                class="hc-minus"
                 data-key="${item.key}"
               >
-                Remove
+                −
               </button>
 
-              ${
-                comparePrice
-                  ? `
-                    <div class="hc-compare-price">
-                      ${comparePrice}
-                    </div>
-                  `
-                  : ""
-              }
+              <span class="hc-quantity-value">
+                ${item.quantity}
+              </span>
 
-              <div class="hc-item-subtotal">
-                $${(
-                  item.final_line_price /
-                  100
-                ).toFixed(2)}
-              </div>
-
-              ${
-                discount > 0
-                  ? `
-                    <div class="hc-item-discount">
-                      Save $${(
-                        discount / 100
-                      ).toFixed(2)}
-                    </div>
-                  `
-                  : ""
-              }
-
+              <button
+                class="hc-plus"
+                data-key="${item.key}"
+              >
+                +
+              </button>
             </div>
 
           </div>
-        `;
-      }
-    )
+
+          <div class="hc-item-pricing">
+
+            <button
+              class="hc-remove"
+              data-key="${item.key}"
+            >
+              Remove
+            </button>
+
+            ${
+              comparePrice
+                ? `
+                  <div class="hc-compare-price">
+                    ${comparePrice}
+                  </div>
+                `
+                : ""
+            }
+
+            <div class="hc-item-subtotal">
+              $${(item.final_line_price / 100).toFixed(2)}
+            </div>
+
+            ${
+              discount > 0
+                ? `
+                  <div class="hc-item-discount">
+                    Save $${(discount / 100).toFixed(2)}
+                  </div>
+                `
+                : ""
+            }
+
+          </div>
+
+        </div>
+      `;
+    })
     .join("");
 }
 

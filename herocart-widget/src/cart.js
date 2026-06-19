@@ -1,8 +1,33 @@
+import { getProduct } from "./products";
+
 export async function getCart() {
   const response =
     await fetch("/cart.js");
 
   return response.json();
+}
+
+export async function enrichCart(cart) {
+  const items = await Promise.all(
+    cart.items.map(async (item) => {
+      const product = await getProduct(item.handle);
+
+      const variant = product.variants.find(
+        v => v.id === item.variant_id
+      );
+
+      return {
+        ...item,
+        compare_at_price:
+          variant.compare_at_price,
+      };
+    })
+  );
+
+  return {
+    ...cart,
+    items
+  };
 }
 
 export async function updateQuantity(

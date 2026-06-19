@@ -1,4 +1,4 @@
-import { getCart, updateCartBubble }
+import { enrichCart, getCart, updateCartBubble }
 from "./src/cart.js";
 
 import {
@@ -37,9 +37,12 @@ async function init() {
   const cart =
     await getCart();
 
+  const enricherdCart =
+    await enrichCart(cart);
+
   setStoredCart(cart)
 
-  renderCartItems(cart);
+  renderCartItems(enricherdCart);
 
   renderSubtotal(cart);
 
