@@ -183,28 +183,11 @@ cart-drawer {
   font-size: 12px;
 }
 
-.hc-summary-row {
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-}
-
-.hc-total-savings {
-  font-size: 12px;
-}
-
-#hc-total-savings {
-  color: #16a34a;
-  font-weight: 600;
-}
-
 .hc-item-subtotal {
   font-size: 14px;
   font-weight: 600;
 
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 .hc-item-discount {
@@ -302,4 +285,14 @@ cart-drawer {
   animation:
     hc-skeleton-loading
     1.2s infinite;
+}
+
+.hc-item-save {
+  margin-top: 4px;
+
+  color: #16a34a;
+
+  font-size: 14px;
+
+  font-weight: 600;
 }
