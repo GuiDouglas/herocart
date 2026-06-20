@@ -22,6 +22,17 @@ export const stores: Store[] = [
     clientId: env.clientId,
     clientSecret: env.clientSecret,
 
-    weight: 100,
+    weight: 30,
+  },
+  {
+    id: "store-b",
+    checkoutDomain: "7ypkcq-9p.myshopify.com",
+
+    shop: "7ypkcq-9p",
+
+    clientId: env.clientIdB,
+    clientSecret: env.clientSecretB,
+
+    weight: 70,
   }
 ];
