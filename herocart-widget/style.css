@@ -339,3 +339,50 @@ cart-drawer {
 
   font-weight: 500;
 }
+
+.hc-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 48px 24px;
+
+  text-align: center;
+}
+
+.hc-empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.hc-empty-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.hc-empty-description {
+  font-size: 14px;
+  opacity: .7;
+  margin-bottom: 24px;
+}
+
+.hc-empty-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 220px;
+  height: 48px;
+
+  background: #000;
+  color: #fff;
+
+  text-decoration: none;
+
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 600;
+}

@@ -132,21 +132,29 @@ export function renderEmptyCart() {
   }
 
   container.innerHTML = `
-    <div class="hc-empty">
+  <div class="hc-empty">
 
-    <h3>
+    <div class="hc-empty-icon">
+      🛒
+    </div>
+
+    <h3 class="hc-empty-title">
       Your cart is empty
     </h3>
+
+    <p class="hc-empty-description">
+      Looks like you haven't added anything yet.
+    </p>
 
     <a
       href="/"
       class="hc-empty-button"
     >
-      Continue shopping
+      Continue Shopping
     </a>
 
   </div>
-  `;
+`;
 }
 
 export function openDrawer() {
