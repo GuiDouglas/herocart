@@ -270,10 +270,9 @@ export function renderCheckoutButton(cart) {
     document.querySelector(
       "#hc-checkout"
     );
-    console.log(cart.items)
 
     button.textContent =
     `Checkout • $${(
-      cart[0].line_price / 100
+      cart.items[0].line_price / 100
     ).toFixed(2)}`; 
 }
