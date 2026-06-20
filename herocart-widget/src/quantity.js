@@ -3,6 +3,7 @@
     updateCartBubble,
     updateQuantity
   } from "./cart.js";
+import { initRemove } from "./remove.js";
 
   import {
     renderCartItems,
@@ -58,7 +59,9 @@ import { getStoredCart, setStoredCart } from "./store.js";
     }
 
     if (item.quantity <= 1) {
-      return;
+      initRemove()
+
+      return
     }
 
     const updatedCart =
