@@ -38,20 +38,20 @@ async function init() {
   const cart =
     await getCart();
 
-  const enricherdCart =
-    await enrichCart(cart);
+  const enrichedCart =
+    await enrichCart(cart); 
 
-  setStoredCart(cart)
+  setStoredCart(enrichedCart)
 
-  renderCartItems(enricherdCart);
+  renderCartItems(enrichedCart);
 
-  renderTotalSavings(cart);
+  renderTotalSavings(enrichedCart);
 
   renderSubtotal(cart);
 
-  renderCheckoutButton(cart);
+  renderCheckoutButton(enrichedCartcart);
 
-  updateCartBubble(cart);
+  updateCartBubble(enrichedCart);
 
   initDrawer();
 
