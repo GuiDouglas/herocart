@@ -11,5 +11,5 @@ export function setStoredCart(
 }
 
 export function clearStoredCart() {
-  cart = null;
+  cart = 0;
 }

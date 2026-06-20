@@ -1,9 +1,11 @@
-import { getCart }
+import { enrichCart, getCart }
 from "./cart.js";
 
 import {
   renderCartItems,
-  renderSubtotal
+  renderCheckoutButton,
+  renderSubtotal,
+  renderTotalSavings
 }
 from "./render.js";
 
@@ -32,11 +34,18 @@ export function initInterceptors() {
         const cart =
           await getCart();
 
-        setStoredCart(cart)
+        const enrichedCart =
+         await enrichCart(cart)
+
+        setStoredCart(enrichedCart)
 
         renderCartItems(cart);
 
-        renderSubtotal(cart);
+        renderSubtotal(enrichedCart);
+
+        renderTotalSavings(enrichedCart);
+
+        renderCheckoutButton(enrichedCart);
 
         openDrawer();
       }
