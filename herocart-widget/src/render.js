@@ -273,6 +273,6 @@ export function renderCheckoutButton(cart) {
 
     button.textContent =
     `Checkout • $${(
-      cart.total_price / 100
+      cart.final_line_price / 100
     ).toFixed(2)}`; 
 }
