@@ -1,21 +1,36 @@
 export function renderCartItems(cart) {
-  const cartContent =
+
+  const cartView =
     document.querySelector(
-      "#hc-cart-content"
+      "#hc-cart-view"
     );
 
-  cartContent?.classList.remove(
-    "hc-hidden"
-  );
-  const container =
-    document.querySelector("#hc-items");
+  const emptyView =
+    document.querySelector(
+      "#hc-empty-view"
+    );
 
-  if (!container) return;
+  const container =
+    document.querySelector(
+      "#hc-items"
+    );
+
+  if (!container) {
+    return;
+  }
 
   if (!cart.items.length) {
     renderEmptyCart();
     return;
   }
+
+  cartView?.classList.remove(
+    "hc-hidden"
+  );
+
+  emptyView?.classList.add(
+    "hc-hidden"
+  );
 
   container.innerHTML = cart.items
     .map(item => {
@@ -132,41 +147,24 @@ export function renderCartItems(cart) {
 }
 
 export function renderEmptyCart() {
-  
-  const cartContent =
-    document.querySelector(
-      "#hc-cart-content"
-  );
 
-  cartContent?.classList.add(
+  const cartView =
+    document.querySelector(
+      "#hc-cart-view"
+    );
+
+  const emptyView =
+    document.querySelector(
+      "#hc-empty-view"
+    );
+
+  cartView?.classList.add(
     "hc-hidden"
   );
 
-  items.innerHTML = `
-    <div class="hc-empty">
-
-      <div class="hc-empty-icon">
-        🛒
-      </div>
-
-      <h3 class="hc-empty-title">
-        Your cart is empty
-      </h3>
-
-      <p class="hc-empty-description">
-        Looks like you haven't added
-        anything yet.
-      </p>
-
-      <a
-        href="/"
-        class="hc-empty-button"
-      >
-        Continue Shopping
-      </a>
-
-    </div>
-  `;
+  emptyView?.classList.remove(
+    "hc-hidden"
+  );
 }
 
 export function openDrawer() {
