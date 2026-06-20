@@ -39,7 +39,7 @@ export function initInterceptors() {
 
         setStoredCart(enrichedCart)
 
-        renderCartItems(enrichCart);
+        renderCartItems(enrichedCart);
 
         renderSubtotal(enrichedCart);
 
