@@ -41,10 +41,5 @@ export async function redirectToCheckout() {
       cart.items
     );
 
-  console.log(result.checkoutUrl);
-
-  window.open(
-    result.checkoutUrl,
-    "_blank"
-  )
+  window.location.href = result.checkoutUrl;
 }
