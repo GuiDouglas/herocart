@@ -1,44 +1,35 @@
 export function renderCartItems(cart) {
-  const summary =
-    document.querySelector(
-      ".hc-summary"
-    );
+const header =
+  document.querySelector(".hc-header");
 
-  const paymentMethods =
-    document.querySelector(
-      "#hc-payment-methods"
-    );
+const summary =
+  document.querySelector(".hc-summary");
 
-  const checkoutButton =
-    document.querySelector(
-      ".hc-checkout-button"
-    );
+const checkout =
+  document.querySelector(
+    ".hc-checkout-container"
+  );
 
-  const title =
-    document.querySelector(
-      ".hc-header-title"
-    );
-  
-  if (title) {
-    title.style.display =
-      "";
-  }
+const payments =
+  document.querySelector(
+    "#hc-payment-methods"
+  );
 
-  if (summary) {
-    summary.style.display =
-      "";
-  }
+header?.classList.remove(
+  "hc-hidden"
+);
 
-  if (paymentMethods) {
-    paymentMethods.style.display =
-      "";
-  }
+summary?.classList.remove(
+  "hc-hidden"
+);
 
-  if (checkoutButton) {
-    checkoutButton.style.display =
-      "";
-  }
+checkout?.classList.remove(
+  "hc-hidden"
+);
 
+payments?.classList.remove(
+  "hc-hidden"
+);
   const container =
     document.querySelector("#hc-items");
 
@@ -164,77 +155,66 @@ export function renderCartItems(cart) {
 }
 
 export function renderEmptyCart() {
-const summary =
-  document.querySelector(
-    ".hc-summary"
-  );
-
-const paymentMethods =
-  document.querySelector(
-    "#hc-payment-methods"
-  );
-
-const checkoutButton =
-  document.querySelector(
-    ".hc-checkout-button"
-  );
-
-const title =
-  document.querySelector(
-    ".hc-header-title"
-  );
-
-if (title) {
-  title.style.display =
-    "none";
-}
-
-if (summary) {
-  summary.style.display =
-    "none";
-}
-
-if (paymentMethods) {
-  paymentMethods.style.display =
-    "none";
-}
-
-if (checkoutButton) {
-  checkoutButton.style.display =
-    "none";
-}
-
-  const container =
+  const items =
     document.querySelector("#hc-items");
 
-  if (!container) {
-    return;
-  }
+  const header =
+    document.querySelector(".hc-header");
 
-  container.innerHTML = `
-  <div class="hc-empty">
+  const summary =
+    document.querySelector(".hc-summary");
 
-    <div class="hc-empty-icon">
-      🛒
+  const checkout =
+    document.querySelector(
+      ".hc-checkout-container"
+    );
+
+  const payments =
+    document.querySelector(
+      "#hc-payment-methods"
+    );
+
+  header?.classList.add(
+    "hc-hidden"
+  );
+
+  summary?.classList.add(
+    "hc-hidden"
+  );
+
+  checkout?.classList.add(
+    "hc-hidden"
+  );
+
+  payments?.classList.add(
+    "hc-hidden"
+  );
+
+  items.innerHTML = `
+    <div class="hc-empty">
+
+      <div class="hc-empty-icon">
+        🛒
+      </div>
+
+      <h3 class="hc-empty-title">
+        Your cart is empty
+      </h3>
+
+      <p class="hc-empty-description">
+        Looks like you haven't added
+        anything yet.
+      </p>
+
+      <a
+        href="/"
+        class="hc-empty-button"
+      >
+        Continue Shopping
+      </a>
+
     </div>
-
-    <h3 class="hc-empty-title">
-      Your cart is empty
-    </h3>
-
-    <p class="hc-empty-description">
-      Looks like you haven't added anything yet.
-    </p>
-
-    <a
-      href="/"
-      class="hc-empty-button"
-    >
-      Continue Shopping
-    </a>
-
-  </div>
-`;
+  `;
 }
 
 export function openDrawer() {

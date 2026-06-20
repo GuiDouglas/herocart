@@ -386,3 +386,7 @@ cart-drawer {
   font-size: 14px;
   font-weight: 600;
 }
+
+.hc-hidden {
+  display: none !important;
+}

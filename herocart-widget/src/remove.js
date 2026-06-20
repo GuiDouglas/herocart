@@ -1,5 +1,5 @@
 import {
-  removeItem
+  removeItem, updateCartBubble
 } from "./cart.js";
 
 import {
