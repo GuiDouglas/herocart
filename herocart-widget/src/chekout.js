@@ -5,7 +5,7 @@ export async function createCheckout(
 ) {
   const response =
     await fetch(
-      "http://localhost:3000/checkout",
+      "https://api.nyoveo.com/checkout",
       {
         method: "POST",
         headers: {
@@ -31,11 +31,20 @@ export async function redirectToCheckout() {
   const cart =
     getStoredCart();
 
+  console.log(
+    "Incoming cart:",
+    cart 
+  )
+
   const result =
     await createCheckout(
       cart.items
     );
 
-  window.location.href =
-    result.checkoutUrl;
+  console.log(result.checkoutUrl);
+
+  window.open(
+    result.checkoutUrl,
+    "_blank"
+  )
 }

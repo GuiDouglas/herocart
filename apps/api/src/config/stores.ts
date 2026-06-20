@@ -14,7 +14,7 @@ export interface Store {
 
 export const stores: Store[] = [
   {
-    id: "store-b",
+    id: "store-a",
     checkoutDomain: "150x5b-kz.myshopify.com",
 
     shop: "150x5b-kz",
@@ -22,18 +22,6 @@ export const stores: Store[] = [
     clientId: env.clientId,
     clientSecret: env.clientSecret,
 
-    weight: 70,
-  },
-
-  {
-    id: "store-c",
-    checkoutDomain: "loja-c.myshopify.com",
-
-    shop: "store-c",
-
-    clientId: env.clientId,
-    clientSecret: env.clientSecret,
-
-    weight: 30,
-  },
+    weight: 100,
+  }
 ];

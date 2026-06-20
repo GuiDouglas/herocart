@@ -15,7 +15,7 @@ export async function fetchProducts(
       body: JSON.stringify({
         query: `
           {
-            products(first: 20) {
+            products(first: 50) {
               nodes {
                 title
 
