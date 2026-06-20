@@ -50,7 +50,7 @@ async function init() {
 
   renderSubtotal(cart);
 
-  renderCheckoutButton(enrichedCartcart);
+  renderCheckoutButton(enrichedCart);
 
   updateCartBubble(enrichedCart);
 

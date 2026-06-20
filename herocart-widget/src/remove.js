@@ -7,7 +7,7 @@ import {
   renderSubtotal,
   renderTotalSavings
 } from "./render.js";
-import { setStoredCart } from "./store.js";
+import { clearStoredCart } from "./store.js";
 
 export function initRemove() {
   document.addEventListener(
@@ -27,7 +27,7 @@ export function initRemove() {
           button.dataset.key
         );
 
-      setStoredCart(updatedCart)
+      clearStoredCart()
 
       renderCartItems(
         updatedCart
