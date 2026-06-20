@@ -6,6 +6,7 @@ import {
 
 import {
   renderCartItems,
+  renderCheckoutButton,
   renderSubtotal,
   renderTotalSavings
 } from "./render.js";
@@ -65,6 +66,10 @@ async function increaseQuantity(
     renderSubtotal(
       enrichedCart
     );
+
+    renderCheckoutButton(
+      enrichedCart
+    )
 
     updateCartBubble(
       enrichedCart
@@ -128,6 +133,10 @@ async function decreaseQuantity(
     renderSubtotal(
       enrichedCart
     );
+
+    renderCheckoutButton(
+      enrichedCart
+    )
 
     updateCartBubble(
       enrichedCart

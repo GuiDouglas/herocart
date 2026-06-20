@@ -40,7 +40,6 @@ async function init() {
 
   const enrichedCart =
     await enrichCart(cart); 
-  console.log(enrichedCart.items)
 
   setStoredCart(enrichedCart)
 
