@@ -1,35 +1,12 @@
 export function renderCartItems(cart) {
-const header =
-  document.querySelector(".hc-header");
+  const cartContent =
+    document.querySelector(
+      "#hc-cart-content"
+    );
 
-const summary =
-  document.querySelector(".hc-summary");
-
-const checkout =
-  document.querySelector(
-    ".hc-checkout-container"
+  cartContent?.classList.remove(
+    "hc-hidden"
   );
-
-const payments =
-  document.querySelector(
-    "#hc-payment-methods"
-  );
-
-header?.classList.remove(
-  "hc-hidden"
-);
-
-summary?.classList.remove(
-  "hc-hidden"
-);
-
-checkout?.classList.remove(
-  "hc-hidden"
-);
-
-payments?.classList.remove(
-  "hc-hidden"
-);
   const container =
     document.querySelector("#hc-items");
 
@@ -155,38 +132,13 @@ payments?.classList.remove(
 }
 
 export function renderEmptyCart() {
-  const items =
-    document.querySelector("#hc-items");
-
-  const header =
-    document.querySelector(".hc-header");
-
-  const summary =
-    document.querySelector(".hc-summary");
-
-  const checkout =
+  
+  const cartContent =
     document.querySelector(
-      ".hc-checkout-container"
-    );
-
-  const payments =
-    document.querySelector(
-      "#hc-payment-methods"
-    );
-
-  header?.classList.add(
-    "hc-hidden"
+      "#hc-cart-content"
   );
 
-  summary?.classList.add(
-    "hc-hidden"
-  );
-
-  checkout?.classList.add(
-    "hc-hidden"
-  );
-
-  payments?.classList.add(
+  cartContent?.classList.add(
     "hc-hidden"
   );
 
