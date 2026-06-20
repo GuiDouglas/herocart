@@ -85,6 +85,25 @@ export function updateCartBubble(
     return;
   }
 
+  const count =
+    cart.items?.reduce(
+      (total, item) =>
+        total + item.quantity,
+      0
+    ) ?? 0;
+
+    if (count <= 0) {
+      bubble.parentElement?.classList.add(
+        "hidden"
+      );
+    
+      return;
+    }
+    
+    bubble.parentElement?.classList.remove(
+      "hidden"
+    );  
+
   bubble.textContent =
-    cart.item_count;
+    count;
 }

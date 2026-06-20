@@ -390,3 +390,20 @@ cart-drawer {
 .hc-hidden {
   display: none !important;
 }
+
+#hc-cart-view {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 0;
+}
+
+#hc-cart-footer {
+  flex-shrink: 0;
+
+  padding-bottom: 16px;
+
+  background: white;
+}
