@@ -1,4 +1,44 @@
 export function renderCartItems(cart) {
+  const summary =
+    document.querySelector(
+      ".hc-summary"
+    );
+
+  const paymentMethods =
+    document.querySelector(
+      "#hc-payment-methods"
+    );
+
+  const checkoutButton =
+    document.querySelector(
+      ".hc-checkout-button"
+    );
+
+  const title =
+    document.querySelector(
+      ".hc-header-title"
+    );
+  
+  if (title) {
+    title.style.display =
+      "";
+  }
+
+  if (summary) {
+    summary.style.display =
+      "";
+  }
+
+  if (paymentMethods) {
+    paymentMethods.style.display =
+      "";
+  }
+
+  if (checkoutButton) {
+    checkoutButton.style.display =
+      "";
+  }
+
   const container =
     document.querySelector("#hc-items");
 
@@ -124,6 +164,46 @@ export function renderCartItems(cart) {
 }
 
 export function renderEmptyCart() {
+const summary =
+  document.querySelector(
+    ".hc-summary"
+  );
+
+const paymentMethods =
+  document.querySelector(
+    "#hc-payment-methods"
+  );
+
+const checkoutButton =
+  document.querySelector(
+    ".hc-checkout-button"
+  );
+
+const title =
+  document.querySelector(
+    ".hc-header-title"
+  );
+
+if (title) {
+  title.style.display =
+    "none";
+}
+
+if (summary) {
+  summary.style.display =
+    "none";
+}
+
+if (paymentMethods) {
+  paymentMethods.style.display =
+    "none";
+}
+
+if (checkoutButton) {
+  checkoutButton.style.display =
+    "none";
+}
+
   const container =
     document.querySelector("#hc-items");
 
