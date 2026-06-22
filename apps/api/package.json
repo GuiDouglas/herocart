@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
+    "start": "node dist/index.js",
     "typecheck": "tsc --noEmit",
     "sync": "tsx src/scripts/generate-map.ts",
     "scripts:test-store": "tsx src/scripts/test-store-picker.ts"

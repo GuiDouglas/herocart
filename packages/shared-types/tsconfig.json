@@ -1,5 +1,14 @@
 {
   "compilerOptions": {
-    "strict": true
-  }
+    "target": "ES2022",
+
+    "declaration": true,
+
+    "rootDir": ".",
+    "outDir": "./dist"
+  },
+
+  "include": [
+    "*.ts"
+  ]
 }

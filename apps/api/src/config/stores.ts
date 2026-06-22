@@ -22,7 +22,7 @@ export const stores: Store[] = [
     clientId: env.clientId,
     clientSecret: env.clientSecret,
 
-    weight: 30,
+    weight: 50,
   },
   {
     id: "store-b",
@@ -33,6 +33,6 @@ export const stores: Store[] = [
     clientId: env.clientIdB,
     clientSecret: env.clientSecretB,
 
-    weight: 70,
+    weight: 50,
   }
 ];

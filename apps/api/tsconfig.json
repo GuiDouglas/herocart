@@ -3,7 +3,11 @@
     "target": "ES2022",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
+
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+
+    "rootDir": "./src",
+    "outDir": "./dist",
   }
 }

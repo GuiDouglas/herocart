@@ -1,7 +1,18 @@
 {
   "compilerOptions": {
-    "strict": true,
     "target": "ES2022",
-    "module": "CommonJS"
-  }
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+
+    "strict": true,
+
+    "declaration": true,
+
+    "rootDir": "./src",
+    "outDir": "./dist"
+  },
+
+  "include": [
+    "src/**/*"
+  ]
 }
