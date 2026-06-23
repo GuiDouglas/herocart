@@ -5,7 +5,7 @@ export async function createCheckout(
 ) {
   const response =
     await fetch(
-      "https://api.nyoveo.com/checkout",
+      "https://api.razecart.com/checkout",
       {
         method: "POST",
         headers: {

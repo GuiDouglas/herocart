@@ -11,4 +11,6 @@ export const env = {
   shopDomainB: process.env.SHOP_DOMAIN_B!,
   clientIdB: process.env.SHOPIFY_CLIENT_ID_B!,
   clientSecretB: process.env.SHOPIFY_CLIENT_SECRET_B!,
+  enviroment: process.env.ENVIRONMENT!,
+  RAILWAY_GIT_COMMIT_SHA: process.env.RAILWAY_GIT_COMMIT_SHA!,
 };
