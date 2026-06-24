@@ -1,7 +1,9 @@
 async function loadHeroCart() {
   const html = await fetch(
-    "https://herocart.gui-alvesdouglas.workers.dev/"
+    "https://razecart.dominusredirecionamento.workers.dev"
   ).then(r => r.text());
+
+  
 
   const css =
     document.createElement("link");
@@ -9,7 +11,7 @@ async function loadHeroCart() {
   css.rel = "stylesheet";
 
   css.href =
-    "https://herocart.gui-alvesdouglas.workers.dev/style.css";
+    "https://razecart.dominusredirecionamento.workers.dev/style.css";
 
   document.head.appendChild(css);
 
@@ -27,7 +29,7 @@ async function loadHeroCart() {
 
 
   await import(
-    "https://herocart.gui-alvesdouglas.workers.dev/app.js"
+    "https://razecart.dominusredirecionamento.workers.dev/app.js"
   );
 }
 
