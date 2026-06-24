@@ -1,5 +1,4 @@
 import {
-  CheckoutItem,
   buildCheckoutUrl
 } from "@herocart/core";
 
@@ -7,6 +6,7 @@ import { loadMap }
 from "../maps/load-map";
 
 import { pickStore } from "../stores/pick-store";
+import { CheckoutItem } from "@shared/types";
 
 export async function createCheckout(
   cart: CheckoutItem[]
